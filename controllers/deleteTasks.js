@@ -6,6 +6,7 @@ const delTasks = async(req, res) => {
         await Tasks.deleteOne({_id: req.params._id});
         res.status(200).json({
             status:200,
+            id: req.params._id,
             msg:'Task Deleted'
         })
     }catch(err){
