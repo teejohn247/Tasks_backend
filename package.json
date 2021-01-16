@@ -4,7 +4,9 @@
   "description": "",
   "main": "App.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "babel app.js --out-dir build",
+    "start": "nodemon --exec babel-node app.js",
+    "server": "nodemon app.js"
   },
   "author": "Ajuwon Tolu Johnson",
   "license": "ISC",
@@ -25,10 +27,12 @@
     "express-validator": "^6.2.0",
     "is-empty": "^1.2.0",
     "json2csv": "^5.0.0",
+    "moment": "^2.29.1",
     "mongo-date-query": "^1.2.2",
     "mongoose": "^5.7.9",
     "morgan": "^1.9.1",
     "nodemon": "^1.19.0",
+    "path": "^0.12.7",
     "request": "^2.88.0"
   }
 }
