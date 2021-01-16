@@ -7,30 +7,24 @@ const editTasks = async (req, res) => {
         if(!records){
             res.status(404).json({
                 status:404,
-                error:'No user Found'
+                error:'No Task Found'
             })
             return
         }
         console.log(records)
-         records.updateOne({
+       await records.updateOne({
             task_by: req.body.task_by,
             task_for: req.body.task_for,
             deadline: req.body.deadline,
             label: req.body.label,
             main_task: req.body.main_task
         },    
-         records).then(
-            () => {
+         records)
+              const allTasks = await Tasks.find();
               res.status(200).json({
-                task_by: req.body.task_by,
-                task_for: req.body.task_for,
-                deadline: req.body.deadline,
-                label: req.body.label,
-                main_task: req.body.main_task
+               allTasks
               });
             }
-          )     
-    }
     catch(err){
         res.status(500).json({
             status:500,

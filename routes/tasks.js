@@ -11,7 +11,7 @@ const router = express.Router();
 
 router.post('/addTask', addTask);
 router.get('/allTask', allTasks);
-router.patch('/editTask/:id', editTasks);
+router.patch('/editTask/:_id', editTasks);
 router.delete('/delTask/:_id', delTask);
 
 
