@@ -2,10 +2,7 @@ import mongoose from 'mongoose';
 import moment from 'moment';
 
 const TasksSchema = new mongoose.Schema({
-    task:{
-        type:String,
-        required:true
-    },
+ 
     task_by:{
         type:String,
         required:true,
@@ -14,7 +11,16 @@ const TasksSchema = new mongoose.Schema({
         type:String,
         required:true
     },
+    
     deadline:{
+        type:String,
+        required:true
+    },
+    label:{
+        type:String,
+        required:true,
+    },
+    main_task:{
         type:String,
         required:true
     },

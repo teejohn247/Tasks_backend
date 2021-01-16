@@ -5,6 +5,7 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import connectDb from './config/db';
+import taskRouter from './routes/tasks';
 import path from 'path';
 
 
@@ -40,7 +41,7 @@ app.get('/api/v1', (req, res) => {
     });
   });
 
-// app.use('/api/v1', userRouter);
+app.use('/api/v1', taskRouter);
 // Server static assets if in production
 if (process.env.NODE_ENV === 'production') {
   // Set static folder
